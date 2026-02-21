@@ -1,0 +1,50 @@
+bc8659f4-3062-4f57-9e24-e32ad92a8d4e,"{'is_answer_correct': 'yes', 'correct answer': 'They are ortho-halogenated derivatives of phenothiazine.', 'why_correct': 'Orthopramides are a type of antipsychotic drug that belong to the phenothiazine family. They are specifically ortho-chlorinated derivatives, which means they have a chlorine atom attached at the ortho position on their benzene ring structure. This characteristic sets them apart from other similar drugs like anilides or benzamides.', 'why_others_incorrect': 'Option 0 describes anilides with a propyl group in ortho, which is incorrect as ortopramides are phenothiazines. Option 1 refers to benzamides with a methoxy group in ortho, also incorrect since they belong to the phenothiazine class. Option 2 mentions benzenesulfonamides, which have a different structure and are not related to ortopramides.'}"
+9fcf1ab0-387c-447a-ab6c-78367b5e5282,"The turtle technique is used for minor bleeding control in older children during their primary education years. This age group typically requires simpler methods due to physical development.
+
+```json
+{
+  ""is_answer_correct"": ""yes"",
+  ""correct answer"": ""Older children (last courses of Primary Education)."",
+  ""why_correct"": ""The turtle technique is primarily used for minor bleeding control in older children, specifically those near the end of their primary education years."",
+  ""why_others_incorrect"": ""Options A, C, and D target younger or older age groups where this method isn't typically applied. The turtle technique is suitable for the specified age range to ensure safety and effectiveness.""
+}
+```"
+0ac6c5c7-9826-441a-81d5-68478e6299bb,"The correct answer to the question about blood pressure control goals for a 56-year-old man with hypertension, diabetes, and renal dysfunction should be based on standard guidelines. These conditions require aggressive BP management to prevent complications.
+
+**Step-by-Step Explanation:**
+
+1. **Patient Profile:** The patient has hypertension (pre-treatment BP of 170/100 mmHg), diabetes, and renal dysfunction (creatinine 1.6 mg/dL).
+
+2. **Blood Pressure Goals for Comorbid Conditions:** For patients with multiple chronic conditions like hypertension, diabetes, and kidney disease, blood pressure control is particularly challenging due to increased risk of complications.
+
+3. **Standard Guidelines:**
+   - ADA recommends <130/80 mmHg for adults with diabetes.
+   - In comorbidities such as hypertension or renal disease, more aggressive targets are often necessary.
+
+4. **Analysis of Options:**
+   - **Option 0:** <130/80 is too low given the patient's baseline BP and comorbidities.
+   - **Option 2:** <140/90 mmHg is more appropriate than option 1 but still below the current BP, which may be too strict.
+   - **Option 3:** <140/85 mmHg aligns better with the need for aggressive control without being unattainable.
+
+**Conclusion:**
+
+The correct answer should reflect a target that's more aggressive than standard norms to manage comorbidities. However, based on the provided options, none perfectly fit due to the patient's high baseline BP. If forced to choose, option 2 is slightly better but still too low. The initial selection of option 1 seems incorrect.
+
+```json
+{
+  ""is_answer_correct"": ""no"",
+  ""correct_answer"": ""None of the above"",
+  ""why_correct"": ""The appropriate blood pressure targets for a patient with hypertension, diabetes, and renal dysfunction should be more aggressive than standard guidelines to prevent complications. None of the provided options (150-160/90-95 mmHg) are suitable given their high baseline BP."",
+  ""why_others_incorrect"": ""Option 0 is too low; option 2 is still below the current BP; and option 3 may be more appropriate but not listed.""
+}
+```"
+a6758ac9-7608-4866-bb00-c5e7b19917d5,"The student correctly identified that ""Less intra-operative bleeding"" is an advantage of using sub-marginal flaps in liver surgery.
+
+```json
+{
+  ""is_answer_correct"": ""yes"",
+  ""correct answer"": ""2"",
+  ""why_correct"": ""Sub-marginal flaps are advantageous because they reduce intra-operative bleeding by being thin and placed below limiting structures, minimizing clotted blood during hemostasis."",
+  ""why_others_incorrect"": ""Option 0 is unrelated to sub-marginal flaps. Option 1 (Less scars) might be a benefit but not specific to sub-marginal flaps; option 3 is incorrect as there is an advantage.""
+}
+```"

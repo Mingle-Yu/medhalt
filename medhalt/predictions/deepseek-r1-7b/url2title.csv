@@ -1,0 +1,63 @@
+3eaddf40-3baf-472b-ad83-fbab5a740172,"{""is_paper_exists"": ""Yes"", ""paper_title"": ""Factors influencing the uptake of Voluntary HIV Counseling and Testing among secondary school students in Arusha City, Tanzania: a cross sectional study""}"
+668b7c6e-061f-4dd8-88c1-76ba160e997e,"```json
+{""is_paper_exists"": ""Yes"", ""paper_title"": ""Challenges and opportunities in implementing precision medicine for cardiovascular diseases in sub-Saharan Africa""}
+```"
+3aeb93a6-896d-4abc-9ae1-7c0097129d16,"```json
+{
+  ""paper_title"": ""Factors influencing the uptake of Voluntary HIV Counseling and Testing among secondary school students in Arusha City, Tanzania: a cross sectional study""
+}
+Stop Here"
+4faf14d7-f22c-4573-8d10-d24c972dde3e,"To solve this problem, we need to retrieve the title of a scientific article from PubMed using its unique Paper ID (PMID). The task involves extracting the PMID from a given URL, making an appropriate request to PubMed's API, parsing the response, and handling potential errors gracefully.
+
+### Approach
+1. **Extract the PMID**: Parse the input URL to extract the PMID, which is found after the last slash in the URL.
+2. **Construct the Request URL**: Formulate the complete URL by appending the extracted PMID as a query parameter.
+3. **Make the API Request**: Use the `requests` library to make a GET request to the constructed URL.
+4. **Handle Response Status Codes**: Check if the response is successful (status code 200). If not, handle it as an error case.
+5. **Parse JSON Response**: Extract the paper's metadata from the JSON response and retrieve the title.
+6. **Error Handling**: Ensure that any parsing errors or network issues are handled by setting appropriate status codes and titles.
+
+### Solution Code
+```python
+import requests
+import re
+
+def get_paper_title(input_url):
+    # Extract PMID from URL
+    pmid_match = re.search(r'/(.*?)(/|$)', input_url)
+    if not pmid_match:
+        return {'is_paper_exists': 'Unknown', 'paper_title': 'Unknown'}
+    pmid = pmid_match.group(1).strip()
+    
+    # Construct the request URL with PMID
+    base_url = 'https://pubmed.ncbi.nlm.nih.gov/'
+    full_request_url = f'{base_url}pubid={pmid}'
+    
+    try:
+        response = requests.get(full_request_url)
+        if response.status_code == 200:
+            data = response.json()
+            if isinstance(data, dict) and 'pubmed' in data and 'metadata' in data['pubmed']:
+                paper_metadata = data['pubmed']['metadata']
+                if 'title' in paper_metadata:
+                    paper_title = paper_metadata['title']
+                    return {'is_paper_exists': 'Yes', 'paper_title': paper_title}
+        return {'is_paper_exists': 'Unknown', 'paper_title': 'Unknown'}
+    except requests.exceptions.RequestException as e:
+        print(f""Request failed for PMID {pmid}: {e}"")
+        return {'is_paper_exists': 'Unknown', 'paper_title': 'Unknown'}
+
+# Example usage
+input_url = 'https://pubmed.ncbi.nlm.nih.gov/26492069'
+result = get_paper_title(input_url)
+print(result)
+```
+
+### Explanation
+1. **Extracting PMID**: The regular expression `r'/(.*?)(/|$)'` is used to find the segment after the last slash, which contains the PMID.
+2. **Constructing URL**: The base URL is combined with the extracted PMID to form a complete GET request URL.
+3. **Making Request**: The `requests.get()` method is used to fetch data from the constructed URL. If the response status code is 200 (success), we proceed; otherwise, we handle errors.
+4. **Parsing JSON**: The JSON response is parsed to extract the paper's metadata, which includes the title.
+5. **Error Handling**: Any exceptions during the request or parsing process are caught, and appropriate defaults are set for both existence and title.
+
+This approach ensures that we efficiently retrieve the required information while handling potential issues robustly."

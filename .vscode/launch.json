@@ -1,0 +1,54 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Python: model.py (MedHALT)",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/medhalt/models/model.py",
+      "cwd": "${workspaceFolder}",
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}"
+      },
+      "args": [
+        "--ollama_base_url",
+        "http://localhost:11434",
+        "--model_name",
+        "deepseek-r1:7b",
+        "--dataset_name",
+        "all",
+        "--temperature",
+        "0.6",
+        "--batch_size",
+        "4",
+        "--max_new_tokens",
+        "128",
+        "--top_p",
+        "0.95",
+        "--output_folder",
+        "./medhalt/predictions/"
+      ],
+      "console": "integratedTerminal",
+      "justMyCode": false
+    },
+    {
+      "name": "Python: evaluate.py (MedHALT)",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/medhalt/eval/evaluate.py",
+      "cwd": "${workspaceFolder}",
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}"
+      },
+      "args": [
+        "--prediction_folder",
+        "./medhalt/predictions/deepseek-r1-7b/",
+        "--dataset_folder",
+        "./medhalt/datasets/",
+        "--do_json_conversion"
+      ],
+      "console": "integratedTerminal",
+      "justMyCode": false
+    }
+  ]
+}

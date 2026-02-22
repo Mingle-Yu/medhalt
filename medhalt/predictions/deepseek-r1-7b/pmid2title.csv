@@ -1,6 +1,49 @@
-96892a50-abbb-42a8-8ff2-93c406d593fe,"{""is_paper_exists"": ""Unknown"", ""paper_title"": ""Unknown""}"
-eda28669-f300-4fca-b050-d4bc74c612ad,"{""paper_title"": ""Unknown"", ""is_paper_exists"": ""Unknown""}"
-b90c503b-12af-49bb-b569-fb953ce2d6e1,"```json
-{'is_paper_exists': 'Yes', 'paper_title': 'Factors Influencing the Adoption of Mobile-Based Health Applications in Primary Care Practices'}
+96892a50-abbb-42a8-8ff2-93c406d593fe,{'paper_title': 'Unknown'}
+eda28669-f300-4fca-b050-d4bc74c612ad,{'paper_title': 'Contributions of inflammation and tumor microenvironment to neurofibroma tumorigenesis'}
+b90c503b-12af-49bb-b569-fb953ce2d6e1,"{'is_paper_exists': 'Unknown', 'paper_title': 'Unknown'}"
+6cf2668a-aec7-4c4a-b8dc-afbc4b237255,"{'is_paper_exists': 'Unknown', 'paper_title': 'Unknown'}Stop Here"
+3694796a-e17f-4ba8-abf6-8419a0280b2b,"{""is_paper_exists"": ""Unknown"", ""paper_title"": ""Unknown""}"
+3b7ad133-1f8a-4ef4-816a-cc647f673979,"{""is_paper_exists"": ""Unknown"", ""paper_title"": ""Unknown""}"
+e5bfef48-2e3c-40ae-969a-bcf4b2d6ecd8,"```json
+{""paper_title"": ""Contributions of inflammation and tumor microenvironment to neurofibroma tumorigenesis""}
 ```"
-6cf2668a-aec7-4c4a-b8dc-afbc4b237255,"{""is_paper_exists"": ""Unknown"", ""paper_title"": ""Unknown""}"
+79a64b53-0495-44b8-aed9-e637cb126a76,"```json
+{""is_paper_exists"": ""Unknown"", ""paper_title"": ""Unknown""}
+Stop Here
+```"
+79e5328b-d5a8-4a49-894b-dbce170b0dcd,"{""is_paper_exists"": ""Unknown"", ""paper_title"": ""Unknown""}"
+4cfe50fd-e4c1-4123-891e-b9fbfc49dc0b,"```json
+{""is_paper_exists"": ""Unknown"", ""paper_title"": ""Unknown""}
+Stop Here
+```"
+69ae7296-7ddf-4a08-8683-99680b7125d4,"{""is_paper_exists"": ""Unknown"", ""paper_title"": ""Unknown""}Stop Here"
+613f6ce9-b885-497a-a525-c508cad193b5,"{'is_paper_exists': 'Unknown', 'paper_title': 'Unknown'}"
+88252047-410f-4548-972c-1414a4e0538a,"```json
+{""is_paper_exists"": ""Unknown"", ""paper_title"": ""Unknown""}
+```"
+bc2eab20-4106-47b9-8a53-b104c13d7278,"```json
+{""is_paper_exists"": ""Unknown"", ""paper_title"": ""Unknown""}
+Stop Here
+```"
+a9260d39-fc13-4b08-9121-3a81ce8b08e8,"To solve the problem of retrieving the title of a scientific article given its PMID from PubMed, we follow these steps:
+
+1. **Input Parsing**: Extract the PMID from the input object.
+2. **Construct URL**: Formulate the URL to access the PubMed detail page using the PMID.
+3. **API Request**: Make an HTTP GET request to the constructed URL.
+4. **Response Handling**:
+   - Check if the response is successful (status code 200).
+   - Parse the JSON response and extract the 'title' field.
+5. **Return Result**: If a title exists, return it with `is_paper_exists` as ""Yes"". Otherwise, return both keys as ""Unknown"".
+
+Applying this to the given PMID '25429088', if no valid title is found:
+
+```json
+{""is_paper_exists"": ""Unknown"", ""paper_title"": ""Unknown""}
+```
+
+Thus, the final answer is:
+
+```json
+{""is_paper_exists"": ""Unknown"", ""paper_title"": ""Unknown""}
+```"
+4923b8f1-e140-465c-bfeb-36f049a4253d,"{'is_paper_exists': 'No', 'paper_title': 'Unknown'}"

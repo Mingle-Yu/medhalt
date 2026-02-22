@@ -20,39 +20,6 @@ class Model:
         self.ollama_base_url = ollama_base_url
         self.model_name = model_name
 
-    # async def ollama_http_generate(self, prompt, retry=3, timeout=30, **gen_kwargs):
-    #     """使用 Ollama HTTP API 调用模型（增加重试+超时）"""
-    #     url = f"{self.ollama_base_url}/api/generate"
-    #     payload = {
-    #         "model": self.model_name,
-    #         "prompt": prompt,
-    #         "stream": False,
-    #         "options": {
-    #             "temperature": gen_kwargs.get("temperature", 0.6),
-    #             "max_tokens": gen_kwargs.get("max_new_tokens", 128),
-    #             "top_p": gen_kwargs.get("top_p", 0.95),
-    #         }
-    #     }
-        
-    #     # 重试机制
-    #     for attempt in range(retry):
-    #         try:
-    #             async with aiohttp.ClientSession(timeout=aiohttp.ClientTimeout(total=timeout)) as session:
-    #                 async with session.post(url, json=payload) as resp:
-    #                     if resp.status == 200:
-    #                         data = await resp.json()
-    #                         return data['response']
-    #                     else:
-    #                         err_msg = f"HTTP {resp.status} - {await resp.text()}"
-    #                         if attempt == retry-1:  # 最后一次重试失败
-    #                             return f"error:{err_msg}"
-    #                         await asyncio.sleep(1)  # 重试前休眠1秒
-    #         except Exception as e:
-    #             if attempt == retry-1:
-    #                 return f"error:{str(e)}"
-    #             await asyncio.sleep(1)
-    #     return "error:max retry exceeded"
-
     async def ollama_http_generate(self, prompt, **gen_kwargs):
         """使用 Ollama HTTP API 调用模型"""
         try:
@@ -102,8 +69,10 @@ class Model:
 
         return results, ids
 
-    # 新增：定义异步主函数，事件循环只创建一次
-    async def async_run_generation(self, dataset_name, prompt_template_fn, batch_size=16, output_folder=None, **gen_kwargs):
+    def run_generation(self, dataset_name, prompt_template_fn, batch_size=16, output_folder=None, **gen_kwargs):
+        """
+        完整推理流程：加载数据集 → 批处理推理 → 保存结果
+        """
         from medhalt.models.utils import PromptDataset
 
         outputs = []
@@ -111,54 +80,34 @@ class Model:
         dataloader = DataLoader(dataset, batch_size, collate_fn=dataset._restclient_collate_fn)
         
         pred_folder = os.path.join(output_folder, self.model_name.replace(":", "-"))
+        # -----调试代码-----
+        # print("==========models.model: run_generation starts==========")
+        # print(f"Saving predictions to: {pred_folder}")
+        # ------------------
         os.makedirs(pred_folder, exist_ok=True)
-        csv_path = os.path.join(pred_folder, f"{dataset_name}.csv")
-        
-        # 预打开文件，批量写入（减少IO次数）
-        batch_cache = []
-        CACHE_THRESHOLD = 100  # 缓存100行再写入
-        
+
         for batch in tqdm(dataloader):
             batch_prompts, ids = batch
             try:
-                # 直接调用异步方法，无需重新创建事件循环
-                generated_texts, ids = await self.batch_generate(batch_prompts, ids, **gen_kwargs)
+                generated_texts, ids = asyncio.run(self.batch_generate(batch_prompts, ids, **gen_kwargs))
             except Exception as e:
                 generated_texts = [f"error:{str(e)}"] * len(batch_prompts)
                 ids = ["error"] * len(batch_prompts)
-            
-            # 缓存结果，而非逐行写入
-            batch_cache.extend(zip(ids, generated_texts))
-            # 达到阈值则批量写入
-            if len(batch_cache) >= CACHE_THRESHOLD:
-                with open(csv_path, 'a', encoding='utf-8') as f:
-                    writer = csv.writer(f)
-                    writer.writerows(batch_cache)  # 批量写入！
-                batch_cache = []
-            
-            outputs.append({"generated_text": generated_texts, "id": ids})
-        
-        # 写入剩余缓存
-        if batch_cache:
-            with open(csv_path, 'a', encoding='utf-8') as f:
+
+            with open(os.path.join(pred_folder, f"{dataset_name}.csv"), 'a', encoding='utf-8') as f: # 兼容Windows文件系统，强制指定编码方式为utf-8
                 writer = csv.writer(f)
-                writer.writerows(batch_cache)
-        
+                for gtext, _id in zip(generated_texts, ids):
+                    writer.writerow([_id, gtext]) 
+
+            outputs.append({"generated_text": generated_texts, "id": ids})
+
         with open(os.path.join(pred_folder, "gen_kwargs.json"), 'w') as fp:
             json.dump(gen_kwargs, fp)
-        
-        return outputs
 
-    # 修改原run_generation为：调用异步主函数，事件循环只创建一次
-    def run_generation(self, dataset_name, prompt_template_fn, batch_size=16, output_folder=None, **gen_kwargs):
-        # 事件循环只创建一次！
-        outputs = asyncio.run(self.async_run_generation(
-            dataset_name=dataset_name,
-            prompt_template_fn=prompt_template_fn,
-            batch_size=batch_size,
-            output_folder=output_folder,
-            **gen_kwargs
-        ))
+        # -----调试代码-----
+        # print("==========models.model: run_generation ends==========")
+        # ------------------
+
         return outputs
 
 if __name__ == "__main__":
@@ -209,52 +158,3 @@ if __name__ == "__main__":
     # -----调试代码-----
     # print("==========models.model: main ends==========")
     # ------------------
-
-
-# if __name__ == "__main__":
-#     import argparse
-#     from multiprocessing import Pool
-    
-#     parser = argparse.ArgumentParser()
-#     parser.add_argument("--ollama_base_url", type=str, default="http://localhost:11434")
-#     parser.add_argument("--model_name", type=str, default="deepseek-r1:7b")
-#     parser.add_argument("--dataset_name", type=str, default="all")
-#     parser.add_argument("--temperature", type=float, default=0.6)
-#     parser.add_argument("--batch_size", type=int, default=4)
-#     parser.add_argument("--max_new_tokens", type=int, default=128)
-#     parser.add_argument("--top_p", type=float, default=0.95)
-#     parser.add_argument("--output_folder", type=str, default="./medhalt/predictions/")
-
-#     args = parser.parse_args()
-    
-#     def process_dataset(ds_name):
-#         try:
-#             model_cls = Model(
-#                 ollama_base_url=args.ollama_base_url,
-#                 model_name=args.model_name
-#             )
-#             prompt_template_fn = lambda row: row
-#             print(f"Running predictions for - {ds_name}")
-#             generations = model_cls.run_generation(
-#                 dataset_name=ds_name,
-#                 prompt_template_fn=prompt_template_fn,
-#                 batch_size=args.batch_size,
-#                 temperature=args.temperature,
-#                 max_new_tokens=args.max_new_tokens,
-#                 top_p=args.top_p,
-#                 output_folder=args.output_folder,
-#                 stop_sequences=["Stop Here"],
-#                 seed=42
-#             )
-#             return ds_name, "success"
-#         except Exception as e:
-#             return ds_name, f"error:{e}"
-    
-#     # 并行处理数据集（进程数=CPU核心数/2，避免Ollama API过载）
-#     dataset_list = ["Nota","fake", "FCT","abs2pub", "pmid2title", "url2title", "title2pub"]
-#     with Pool(processes=4) as pool:
-#         results = pool.map(process_dataset, dataset_list)
-    
-#     # 打印结果
-#     for ds_name, res in results:
-#         print(f"{ds_name}: {res}")

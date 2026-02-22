@@ -273,6 +273,8 @@ class FullDataEval(object):
             }
 
         for key in self.all_files:
+            if (key == 'gen_kwargs'):
+                continue
             # -----调试代码-----
             print(f"evaluating {key}")
             # ------------------

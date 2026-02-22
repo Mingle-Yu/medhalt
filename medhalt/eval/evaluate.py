@@ -118,7 +118,7 @@ def convert_to_json(prediction_folder,dataset_folder):
         # -----调试代码-----
         print("dataset_name: ", dataset_name)
         # ------------------
-        dataset_df = pd.read_csv(os.path.join(dataset_folder,f"{dataset_name}.csv"),nrows=4)
+        dataset_df = pd.read_csv(os.path.join(dataset_folder,f"{dataset_name}.csv"),nrows=16)
         # -----调试代码-----
         print("dataset_df: ", dataset_df)
         # ------------------
@@ -164,8 +164,8 @@ if __name__ == "__main__":
 
     results_df = pd.DataFrame()
     
-    # if args.do_json_conversion:
-    #     convert_to_json(args.prediction_folder,args.dataset_folder)
+    if args.do_json_conversion:
+        convert_to_json(args.prediction_folder,args.dataset_folder)
         
     for incorrect_score in [1,-0.25]:
         evaluator = FullDataEval(args.prediction_folder,1,incorrect_score)

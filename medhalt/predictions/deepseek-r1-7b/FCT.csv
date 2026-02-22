@@ -1,50 +1,157 @@
-bc8659f4-3062-4f57-9e24-e32ad92a8d4e,"{'is_answer_correct': 'yes', 'correct answer': 'They are ortho-halogenated derivatives of phenothiazine.', 'why_correct': 'Orthopramides are a type of antipsychotic drug that belong to the phenothiazine family. They are specifically ortho-chlorinated derivatives, which means they have a chlorine atom attached at the ortho position on their benzene ring structure. This characteristic sets them apart from other similar drugs like anilides or benzamides.', 'why_others_incorrect': 'Option 0 describes anilides with a propyl group in ortho, which is incorrect as ortopramides are phenothiazines. Option 1 refers to benzamides with a methoxy group in ortho, also incorrect since they belong to the phenothiazine class. Option 2 mentions benzenesulfonamides, which have a different structure and are not related to ortopramides.'}"
-9fcf1ab0-387c-447a-ab6c-78367b5e5282,"The turtle technique is used for minor bleeding control in older children during their primary education years. This age group typically requires simpler methods due to physical development.
+bc8659f4-3062-4f57-9e24-e32ad92a8d4e,"The student correctly identified that ortopramides are ortho-halogenated derivatives of phenothiazine. This structure involves chlorine atoms in the ortho positions relative to each other on a phenothiazine ring, which is essential for their antiparasitic activity.
 
 ```json
 {
   ""is_answer_correct"": ""yes"",
-  ""correct answer"": ""Older children (last courses of Primary Education)."",
-  ""why_correct"": ""The turtle technique is primarily used for minor bleeding control in older children, specifically those near the end of their primary education years."",
-  ""why_others_incorrect"": ""Options A, C, and D target younger or older age groups where this method isn't typically applied. The turtle technique is suitable for the specified age range to ensure safety and effectiveness.""
+  ""correct_answer"": ""They are ortho-halogenated derivatives of phenothiazine."",
+  ""why_correct"": ""Ortopramides are ortho-chlorinated derivatives of phenothiazine, which gives them their broad-spectrum antiparasitic activity."",
+  ""why_others_incorrect"": ""Options 0, 1, and 2 do not describe the structural feature characteristic of ortopramide group drugs.""
 }
 ```"
-0ac6c5c7-9826-441a-81d5-68478e6299bb,"The correct answer to the question about blood pressure control goals for a 56-year-old man with hypertension, diabetes, and renal dysfunction should be based on standard guidelines. These conditions require aggressive BP management to prevent complications.
+9fcf1ab0-387c-447a-ab6c-78367b5e5282,"{'is_answer_correct': 'yes', 'correct answer': 'Older children (last courses of Primary Education)', 'why_correct': 'The turtle technique is used for injuries in older children, typically during the latter part of primary education. It helps prevent complications from head injuries by immobilizing the neck and head.', 'why_others_incorrect': 'Younger children may not be developmentally ready, while pre-teen/teen ages are too young or unnecessary for this procedure.'}"
+0ac6c5c7-9826-441a-81d5-68478e6299bb,"The correct answer is option 1: 150-160/90-95 mmHg.
 
-**Step-by-Step Explanation:**
+**Explanation Why Correct:**
+For patients with hypertension and diabetes, aggressive blood pressure control is essential due to the compounded risks. The target goal for diastolic and systolic blood pressure should be below 150/90 and 160/95 mmHg, respectively, as outlined in updated guidelines to mitigate complications from both conditions.
 
-1. **Patient Profile:** The patient has hypertension (pre-treatment BP of 170/100 mmHg), diabetes, and renal dysfunction (creatinine 1.6 mg/dL).
+**Why Other Options Are Incorrect:**
+- **Option 0 (<130/80):** Too lenient for a patient with hypertension, especially considering comorbidities like diabetes and renal disease.
+- **Option 2 (<140/90):** Diastolic too low (90 mmHg) may be insufficient given the high baseline blood pressure.
+- **Option 3 (<140/85):** Systolic target is below 140, which might not effectively address the hypertension burden.
 
-2. **Blood Pressure Goals for Comorbid Conditions:** For patients with multiple chronic conditions like hypertension, diabetes, and kidney disease, blood pressure control is particularly challenging due to increased risk of complications.
-
-3. **Standard Guidelines:**
-   - ADA recommends <130/80 mmHg for adults with diabetes.
-   - In comorbidities such as hypertension or renal disease, more aggressive targets are often necessary.
-
-4. **Analysis of Options:**
-   - **Option 0:** <130/80 is too low given the patient's baseline BP and comorbidities.
-   - **Option 2:** <140/90 mmHg is more appropriate than option 1 but still below the current BP, which may be too strict.
-   - **Option 3:** <140/85 mmHg aligns better with the need for aggressive control without being unattainable.
-
-**Conclusion:**
-
-The correct answer should reflect a target that's more aggressive than standard norms to manage comorbidities. However, based on the provided options, none perfectly fit due to the patient's high baseline BP. If forced to choose, option 2 is slightly better but still too low. The initial selection of option 1 seems incorrect.
+Thus, option 1 appropriately balances control goals for this patient's comorbidities."
+a6758ac9-7608-4866-bb00-c5e7b19917d5,"The student's answer indicating 'None of the above' is incorrect. The advantages listed in options 0, 1, and 2 are indeed valid for sub-marginal flaps.
 
 ```json
 {
   ""is_answer_correct"": ""no"",
   ""correct_answer"": ""None of the above"",
-  ""why_correct"": ""The appropriate blood pressure targets for a patient with hypertension, diabetes, and renal dysfunction should be more aggressive than standard guidelines to prevent complications. None of the provided options (150-160/90-95 mmHg) are suitable given their high baseline BP."",
-  ""why_others_incorrect"": ""Option 0 is too low; option 2 is still below the current BP; and option 3 may be more appropriate but not listed.""
+  ""why_correct"": ""Sub-marginal flops offer several advantages, including causing less gingival shrinking, less scars, and less intra-operative bleeding."",
+  ""why_others_incorrect"": ""Options 0, 1, and 2 are all valid advantages of sub-marginal flaps.""
 }
 ```"
-a6758ac9-7608-4866-bb00-c5e7b19917d5,"The student correctly identified that ""Less intra-operative bleeding"" is an advantage of using sub-marginal flaps in liver surgery.
+839de867-3100-4283-a219-ec349eee415f,"The most important intracellular buffer is bicarbonate (HCO3^-). It works alongside carbonic acid to neutralize acids and bases, maintaining cellular pH balance. 
+
+Answer: Bicarbonate"
+140d832a-b8ae-4791-aada-6fd62f313adb,"The student correctly identified that Bonney's test assesses stress urinary incontinence by evaluating pelvic muscle strength at the bladder neck.
 
 ```json
 {
   ""is_answer_correct"": ""yes"",
-  ""correct answer"": ""2"",
-  ""why_correct"": ""Sub-marginal flaps are advantageous because they reduce intra-operative bleeding by being thin and placed below limiting structures, minimizing clotted blood during hemostasis."",
-  ""why_others_incorrect"": ""Option 0 is unrelated to sub-marginal flaps. Option 1 (Less scars) might be a benefit but not specific to sub-marginal flaps; option 3 is incorrect as there is an advantage.""
+  ""correct_answer"": ""Stress urinary incontinence"",
+  ""why_correct"": ""Bonney's test is used to determine stress urinary incontinence, which involves assessing the strength of pelvic muscles around the bladder neck."",
+  ""why_others_incorrect"": ""The other options (uterine prolapse, vesicovaginal fistula, and uteric fistula) are unrelated to Bonney's test as it pertains specifically to evaluating pelvic muscle function in relation to urinary incontinence.""
 }
 ```"
+197feaf8-e848-4d28-9c4e-5b43b8e4ded7,"The patient presents with anemic symptoms and signs of chronic disease. Her low hemoglobin suggests iron-deficiency anemia, a common cause in children. The physical findings align with this condition.
+
+The correct answer relates to the maturation of erythroid progenitor cells because iron deficiency impairs red blood cell production, leading to her anemia. Other options are unrelated: glucocerebroside hydrolysis is about carbohydrates, DNA repair is unrelated, and Ras signaling pertains to cancer.
+```json
+{
+  ""is_answer_correct"": ""yes"",
+  ""correct_answer"": ""Maturation of erythroid progenitor cells"",
+  ""why_correct"": ""The patient's anemia due to iron deficiency likely results from a defect in the maturation of erythroid progenitor cells, as iron is essential for hemoglobin synthesis."",
+  ""why_others_incorrect"": ""Options 0 (hydrolysis) and 1 (DNA repair) are unrelated. Option 3 relates to cancer signaling, not red blood cell production.""
+}
+```"
+3fd34546-c589-4d68-8e0d-eca3f3caf324,"The correct answer should be that none of these steps are necessary. 
+
+**Step-by-Step Explanation:**
+
+1. **Prophylactic Antibiotic Therapy:** Not indicated as there's no evidence or risk factors for future UTIs in this child.
+
+2. **Voiding Cystourethrogram (VCU):** Unnecessary unless there were signs of obstruction, which aren't mentioned here.
+
+3. **Renal Bladder Ultrasound (RBS):** Not needed since there are no signs of kidney abnormalities or stones.
+
+4. **Repeat Urine Culture:** Redundant as the initial culture already identified E. coli, and it's susceptible to current treatment, making further testing unnecessary.
+
+Thus, none of these steps are appropriate in this context."
+9e5ccc5e-7716-4f99-98bd-20931299b126,"The correct answer is to open the Thoracic cavity first. 
+
+**Explanation:**
+In a medicolegal autopsy, particularly when dealing with injuries like those from vehicular impact, the body may have been positioned forward, placing the Thoracic cavity (chest) in an accessible location. Opening this area first allows for the assessment of potential injuries such as cardiac tamponade or chest trauma. This approach facilitates accurate diagnosis and investigation under legal requirements.
+
+**Answer:**
+{'is_answer_correct': 'yes', 'correct answer': 'Thoracic', 'why_correct': 'In medicolegal autopsies, especially when dealing with injuries from vehicular impact, the Thoracic cavity is opened first to assess potential injuries like cardiac tamponade.', 'why_others_incorrect': 'Abdomen and cervical cavities are not typically opened first in such cases. Any of the above implies uncertainty but does not align with standard procedures.'}"
+26ca6141-2cff-4f87-81a9-a3205f75acb0,"The correct answer is ""Preservative"" because magnesium acts as a preservative in OPV, preventing infection by forming a protective film on the mouth.
+
+```json
+{
+  ""is_answer_correct"": ""yes"",
+  ""correct_answer"": ""Preservative"",
+  ""why_correct"": ""Magnesium acts as a preservative in oral polyp prevention (OPV) by creating a protective barrier that prevents infection."",
+  ""why_others_incorrect"": ""The other options do not fit the role of magnesium in OPV. Adjuvant refers to an auxiliary substance, Stabilizar means stabilize and doesn't apply here, while Antiinfective implies it kills bacteria directly.""
+}
+```"
+3331b36a-00ae-4cc6-a352-ae3db6bfcc8d,"The patient's elevated calcium, high alkaline phosphatase, and normal phosphate suggest an acidosis due to increased PTH production from bone marrow failure. This is characteristic of distal renal tubular acidosis.
+
+```json
+{
+  ""is_answer_correct"": ""no"",
+  ""correct_answer"": ""Distal renal tubular acidosis"",
+  ""why_correct"": ""The elevated calcium, high alkaline phosphatase, and normal phosphate suggest an acidosis due to increased parathyroid hormone production from bone marrow failure. This is characteristic of distal renal tubular acidosis."",
+  ""why_others_incorrect"": ""Hypophosphatemic rickets would be expected with low phosphate levels; vitamin D dependent rickets refers to the underlying condition; proximal renal tubular acidosis typically involves more localized acid excretion.""
+}
+```"
+4de1f7bb-e990-4a25-b097-b1ff2d93e603,"The question asks which structures are involved in MEN type II A. The correct answer is the Parathyroid glands (option 0), while the student chose the Adrenal glands (option 1). Here's a detailed explanation:
+
+- **Correct Answer**: Parathyroid Glands
+- **Why Correct**: MEN type II A involves abnormalities in the parathyroid glands, which are crucial for calcium regulation.
+- **Why Others Incorrect**:
+  - **Adrenal Glands (Option 1)**: Involved in stress responses and metabolic functions but not linked to MEN type II A.
+  - **Thyroid Glands (Option 2)**: Involved in metabolism and hormones, unrelated to this MEN type.
+  - **Pituitary Gland (Option 3)**: Related to hormone production, not the cause of MEN type II A.
+
+```json
+{
+  ""is_answer_correct"": ""no"",
+  ""correct_answer"": ""Parathyroid"",
+  ""why_correct"": ""MEN type II A involves abnormalities in the parathyroid glands."",
+  ""why_others_incorrect"": ""Adrenal, thyroid, and pituitary glands are not involved in MEN type II A.""
+}
+```"
+2824395e-a5b4-48b7-ac81-b59a30f12d92,"The correct answer is **Switch blood pressure medication to hydrochlorothiazide**.
+
+**Step-by-Step Explanation:**
+
+1. **Initial Presentation:** The patient has a history of elevated glucose levels managed with metformin, lisinopril, and exercise. He returns with cough symptoms after being discharged from the hospital.
+
+2. **Current Labs:** Elevated blood pressure (160/85 mmHg), increased potassium (5.3 mEq/L), decreased BUN (22 mg/dL), and elevated HCO3- (24 mEq/L) suggest worsening kidney function, likely due to chronic high BP contributing to glomerular fibrosis.
+
+3. **Electrolyte Changes:** The rise in K+ indicates possible heart failure, as high potassium can signal impaired kidney function leading to heart issues.
+
+4. **Symptoms and Progression:** The cough may hint at an underlying pulmonary issue but doesn't directly point to BP or electrolyte management needs yet. However, the progression of BP, electrolytes, and symptoms aligns with CKD-associated heart failure.
+
+5. **Next Steps in Management:**
+   - **Azithromycin** (option 2) is for infections; not relevant.
+   - **Loratadine** (option 3) is an antihistamine for allergies; unrelated to BP or CKD.
+   - The correct choice, **hydrochlorothiazide**, a diuretic and BP medication, helps reduce sodium and water retention, improving kidney function and heart health.
+
+Switching to hydrochlorothiazide addresses the underlying CKD-induced heart failure by managing BP effectively."
+324af048-5d69-4fd2-b84d-f2dd292a2a8a,"The correct answer is **Psoriatic arthropathy**.
+
+**Explanation:**
+- The patient presents with mechanical spinal pain, suggesting spinal involvement.
+- The lack of acute phase reactants rules out bacterial infection or inflammatory bowel disease (IBD).
+- Psoriasis can cause spinal involvement through psoriatic arthritis, leading to bony changes without acute-phase indicators like CRP elevation.
+- Ankylosing spondylitis and Paget's disease are less likely due to their characteristic symmetric or solid tumor presentation.
+
+Thus, the best diagnosis is **Psoriatic arthropathy**."
+3befd4bb-af81-49a6-b640-711797bb3326,"The correct answer should be None because saliva does not have a significant buffering system relying on carbonic acids.
+
+```json
+{
+  ""is_answer_correct"": ""no"",
+  ""correct_answer"": ""None"",
+  ""why_correct"": ""Saliva does not rely on carbonic acids for buffering, making the presence of such a system negligible."",
+  ""why_others_incorrect"": ""Amino acids are irrelevant here; phosphates and carbonic acids do not form a significant buffer in saliva.""
+}
+```"
+4bf6d638-c417-4dbf-9534-71893c142743,"The correct answer is **Tetracycline**. Here's why:
+
+- The patient presents with symptoms suggesting a possible viral or bacterial infection, given her history of tick exposure and the erythematous rash.
+- Tetracycline is an effective antibiotic against various infections, including Group A streptococcus, making it appropriate in this context.
+- Other antibiotics (Ibuprofen, Amoxicillin, Gentamicin) are either not effective for systemic infections or pose risks to the fetus.
+
+Thus, **Tetracycline** is the best choice for treating the infection without risking fetal health."

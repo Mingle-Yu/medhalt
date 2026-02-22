@@ -11,9 +11,9 @@ def read_json_(file):
         file_js = json.load(json_file)
     
     # -----调试代码-----
-    print("==========prompts.utils: read_json starts==========")
-    print(f"{file}: ", file_js)
-    print("==========prompts.utils: read_json ends==========")
+    # print("==========prompts.utils: read_json starts==========")
+    # print(f"{file}: ", file_js)
+    # print("==========prompts.utils: read_json ends==========")
     # ------------------
 
     return file_js
@@ -43,125 +43,125 @@ data_dict = {
 
 def Nota_format(data_):
     # -----调试代码-----
-    print("==========prompts.utils: Nota_format starts==========")
-    print("data_: ", data_)
+    # print("==========prompts.utils: Nota_format starts==========")
+    # print("data_: ", data_)
     # ------------------
 
     data_['prompt'] = data_.apply(lambda row: "Input: " + str({"Question": row['question'], "Options": eval(row['options'])}) + "\nOutput: ", axis=1)
     # -----调试代码-----
-    print("data_: ", data_)
-    print("==========prompts.utils: Nota_format ends==========")
+    # print("data_: ", data_)
+    # print("==========prompts.utils: Nota_format ends==========")
     # ------------------
 
     return data_
 
 def pmid2title_format(data_):
      # -----调试代码-----
-    print("==========prompts.utils: pmid2title_format starts==========")
-    print("data_: ", data_)
+    # print("==========prompts.utils: pmid2title_format starts==========")
+    # print("data_: ", data_)
     # ------------------
     data_['prompt'] = data_.apply(lambda row: "Input: " + str({"Pmid": str(int(row["PMID"]))}), axis=1)
     # -----调试代码-----
-    print("data_: ", data_)
+    # print("data_: ", data_)
     # ------------------
     data_['prompt'] = data_['prompt'].apply(lambda x: str(x) + "\n" + "Output: ")
     # -----调试代码-----
-    print("data_: ", data_)
-    print("==========prompts.utils: pmid2title_format ends==========")
+    # print("data_: ", data_)
+    # print("==========prompts.utils: pmid2title_format ends==========")
     # ------------------
     return data_
 
 
 def abs2pub_format(data_):
     # -----调试代码-----
-    print("==========prompts.utils: abs2pub_format starts==========")
-    print("data_: ", data_)
+    # print("==========prompts.utils: abs2pub_format starts==========")
+    # print("data_: ", data_)
     # ------------------
     data_['prompt'] = data_.apply(lambda row: "Input: " + str({"paper_abstract": str(row["Abstract"])}), axis=1)
     # -----调试代码-----
-    print("data_: ", data_)
+    # print("data_: ", data_)
     # ------------------
     data_['prompt'] = data_['prompt'].apply(lambda x: str(x) + "\n" + "Output: ")
     # -----调试代码-----
-    print("data_: ", data_)
-    print("==========prompts.utils: abs2pub_format ends==========")
+    # print("data_: ", data_)
+    # print("==========prompts.utils: abs2pub_format ends==========")
     # ------------------
     return data_
 
 
 def url2title_format(data_):
     # -----调试代码-----
-    print("==========prompts.utils: url2title_format starts==========")
-    print("data_: ", data_)
+    # print("==========prompts.utils: url2title_format starts==========")
+    # print("data_: ", data_)
     # ------------------
     data_['prompt'] = data_.apply(lambda row: "Input: " + str({"url": str(row["url"])}), axis=1)
     # -----调试代码-----
-    print("data_: ", data_)
+    # print("data_: ", data_)
     # ------------------
     data_['prompt'] = data_['prompt'].apply(lambda x: str(x) + "\n" + "Output: ")
     # -----调试代码-----
-    print("data_: ", data_)
-    print("==========prompts.utils: url2title_format ends==========")
+    # print("data_: ", data_)
+    # print("==========prompts.utils: url2title_format ends==========")
     # ------------------
     return data_
 
 def title2pub_format(data_):
     # -----调试代码-----
-    print("==========prompts.utils: title2pub_format starts==========")
-    print("data_: ", data_)
+    # print("==========prompts.utils: title2pub_format starts==========")
+    # print("data_: ", data_)
     # ------------------
     data_['prompt'] = data_.apply(lambda row: "Input: " + str({"paper_title": str(row["Title"])}), axis=1)
     # -----调试代码-----
-    print("data_: ", data_)
+    # print("data_: ", data_)
     # ------------------
     data_['prompt'] = data_['prompt'].apply(lambda x: str(x) + "\n" + "Output: ")
     # -----调试代码-----
-    print("data_: ", data_)
-    print("==========prompts.utils: title2pub_format ends==========")
+    # print("data_: ", data_)
+    # print("==========prompts.utils: title2pub_format ends==========")
     # ------------------
     return data_
 
 
 def get_samples(dataset_name, shots, prompt_version):
     # -----调试代码-----
-    print("==========prompts.utils: get_samples starts==========")
-    print("dataset_name: ", dataset_name, " shots: ", shots, " prompt_version: ", prompt_version)
+    # print("==========prompts.utils: get_samples starts==========")
+    # print("dataset_name: ", dataset_name, " shots: ", shots, " prompt_version: ", prompt_version)
     # ------------------
 
     prompt  = get_full_prompt(dataset_name, shots, prompt_version)
 
     # -----调试代码-----
-    print("prompt after get_full_prompt: ", prompt)
+    # print("prompt after get_full_prompt: ", prompt)
     # ------------------
 
     dataset = load_dataset(dataset_name)
 
     # -----调试代码-----
-    print("dataset after load_dataset: ", dataset)
+    # print("dataset after load_dataset: ", dataset)
     # ------------------
 
     dataset['prompt'] = dataset['prompt'].apply(lambda x: prompt + str(x))
 
     # -----调试代码-----
-    print("dataset after adding prompt: ", dataset)
+    # print("dataset after adding prompt: ", dataset)
     # ------------------
 
     dataset = dataset.to_dict('records')
 
     # -----调试代码-----
-    print("dataset after to_dict: ", dataset)
-    print("==========prompts.utils: get_samples ends==========")
+    # print("dataset after to_dict: ", dataset)
+    # print("==========prompts.utils: get_samples ends==========")
     # ------------------
     
     return dataset
 
 
 def load_dataset(dataset_name):
-    
-    df = pd.read_csv(os.path.join(DATASETS_FOLDER,data_dict[dataset_name]))
+    df = pd.read_csv(os.path.join(DATASETS_FOLDER,data_dict[dataset_name]), nrows=16) # 子数据
+    # df = pd.read_csv(os.path.join(DATASETS_FOLDER,data_dict[dataset_name])) # 全部数据
     # -----调试代码-----
-    print("==========prompts.utils: load_dataset starts==========")
-    print("df: ", df)
+    # print("==========prompts.utils: load_dataset starts==========")
+    # print("df: ", df)
     # ------------------
     if dataset_name == 'Nota' or dataset_name == 'FCT' or dataset_name == 'fake':
         df = Nota_format(df)
@@ -179,45 +179,45 @@ def load_dataset(dataset_name):
         df = title2pub_format(df)
 
     # -----调试代码-----
-    print("==========prompts.utils: load_dataset ends==========")
+    # print("==========prompts.utils: load_dataset ends==========")
     # ------------------
     return df
 
 
 def prompt_data(prompt_name, version, n_shots):
     # -----调试代码-----
-    print("==========prompts.utils: prompt_data starts==========")
+    # print("==========prompts.utils: prompt_data starts==========")
     # ------------------
 
     prompt    = read_json_(f"{os.path.join(CURRENT_FOLDER,prompt_dict[prompt_name],'prompts.json')}")['prompts']
 
     # -----调试代码-----
-    print("prompt after read_json_: ", prompt)
+    # print("prompt after read_json_: ", prompt)
     # ------------------
 
     prompt    = [prompt_ for prompt_ in prompt if prompt_['id'] == version][0]
 
     # -----调试代码-----
-    print("prompt: ", prompt)
+    # print("prompt: ", prompt)
     # ------------------
     
     shots     = read_json_(f"{os.path.join(CURRENT_FOLDER,prompt_dict[prompt_name],'shots.json')}")['shots'][0]
 
     # -----调试代码-----
-    print("shots after read_json_: ", shots)
+    # print("shots after read_json_: ", shots)
     # ------------------
 
     default_p = [shot_ for shot_ in shots if shot_['prompt_type'] == 'default']
 
     # -----调试代码-----
-    print("default shots: ", default_p)
+    # print("default shots: ", default_p)
     # ------------------
 
     task_p    = [shot_ for shot_ in shots if shot_['prompt_type'] != 'default']
     
     # -----调试代码-----
-    print("task shots: ", task_p)
-    print("==========prompts.utils: prompt_data ends==========")
+    # print("task shots: ", task_p)
+    # print("==========prompts.utils: prompt_data ends==========")
     # ------------------
     
     if n_shots == 0:
@@ -257,14 +257,14 @@ def prompt_data(prompt_name, version, n_shots):
     
 def get_full_prompt(prompt_name, n_shots = 2, version = 'v0'):
     # -----调试代码-----
-    print("==========prompts.utils: get_full_prompt starts==========")
+    # print("==========prompts.utils: get_full_prompt starts==========")
     # ------------------
 
     prompt = prompt_data(prompt_name, version, n_shots)
 
-    # -----调试代码-----
-    print("prompt after prompt_data: ", prompt)
-    print("==========prompts.utils: get_full_prompt ends==========")
+    # # -----调试代码-----
+    # print("prompt after prompt_data: ", prompt)
+    # print("==========prompts.utils: get_full_prompt ends==========")
     # ------------------
 
     if prompt['shots'] == None:

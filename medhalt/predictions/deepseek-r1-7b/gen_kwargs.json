@@ -1,0 +1,1 @@
+{"temperature": 0.6, "max_new_tokens": 64, "top_p": 0.95, "stop_sequences": ["Stop Here"], "seed": 42}
